@@ -142,7 +142,7 @@ def traffic_pipeline(img_raw):
 	pipeline function for traffic sign detection and recognition by performing transformations
 
 	:params:
-	 img_raw : image frame
+	 i : index of frame
 
 	:returns:
 	 predictions
@@ -171,7 +171,7 @@ if __name__ == "__main__":
 	modell.set_weights(weights)
 
 	start=time.time()
-	output = 'test_v9.avi'
+	output = 'test_v10.avi'
 	
 	# open video file to be tested
 	cap=cv2.VideoCapture("challenge_video.mp4")
@@ -197,7 +197,7 @@ if __name__ == "__main__":
 				# detect objects 
 				img = predict_objects(img)
 				
-				img_raw = tf.image.decode_image(open(interPath+str(i)+'.jpg', 'rb').read(), channels=3)
+				img_raw = tf.image.decode_image(open(interPath+'interImg.jpg', 'rb').read(), channels=3)
 				outputs = traffic_pipeline(img_raw)
 				img = draw_outputs(img, outputs, class_names)
 
