@@ -142,7 +142,7 @@ def traffic_pipeline(img_raw):
 	pipeline function for traffic sign detection and recognition by performing transformations
 
 	:params:
-	 i : index of frame
+	 img_raw : image frame
 
 	:returns:
 	 predictions
